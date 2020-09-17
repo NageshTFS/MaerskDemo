@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"adminUsername": {
+			"value": "FastCarz"
+		},
+		"keyVaultName": {
+			"value": "FastCarzkeyVault"
+		},
+		"objectId": {
+			"value": "GEN-AZUREAD-OBJECTID"
+		},
+		"secretName": {
+			"value": "FastCarz"
+		},
+		"secretValue": {
+			"value": "GEN-UNIQUE"
+		},
+
+		"adminPassword": {
+			"reference": {
+				"keyVault": {
+					"id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/fastCarzkeyvaultdeploymentrg/providers/Microsoft.KeyVault/vaults/FastCarzkeyVault"
+				},
+				"secretName": "vmAdminPassword"
+			}
+		},
+
+
+		"dnsLabelPrefix": {
+			"value": "FastCarz"
+		}
+	}
+}
